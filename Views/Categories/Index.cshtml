@@ -5,25 +5,25 @@
 }
 @model IEnumerable<Category>
 @{
-    ViewData["Title"] = "Categorii";
+    ViewData["Title"] = "Categories";
 }
 
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="h3 mb-0">Categorii</h1>
-    <a asp-action="Create" class="btn btn-primary">+ Adaugă categorie</a>
+    <h1 class="h3 mb-0">Categories</h1>
+    <a asp-action="Create" class="btn btn-primary">+ Add category</a>
 </div>
 
 @if (!Model.Any())
 {
-    <p class="text-muted">Nu există încă nicio categorie.</p>
+    <p class="text-muted">There are no categories yet.</p>
 }
 else
 {
     <table class="table table-hover align-middle">
         <thead>
             <tr>
-                <th>Nume</th>
-                <th class="text-center">Cursuri</th>
+                <th>Name</th>
+                <th class="text-center">Courses</th>
                 <th></th>
             </tr>
         </thead>
@@ -34,7 +34,7 @@ else
                     <td>@category.Name</td>
                     <td class="text-center">@category.Courses.Count</td>
                     <td class="text-end">
-                        <a asp-action="Edit" asp-route-id="@category.Id" class="btn btn-sm btn-outline-secondary">Editează</a>
+                        <a asp-action="Edit" asp-route-id="@category.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
                     </td>
                 </tr>
             }

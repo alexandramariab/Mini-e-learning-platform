@@ -40,7 +40,7 @@ namespace MiniELearning.Controllers
 
             if (ModelState.IsValid && await NameExistsAsync(category.Name))
             {
-                ModelState.AddModelError(nameof(Category.Name), "Există deja o categorie cu acest nume.");
+                ModelState.AddModelError(nameof(Category.Name), "A category with this name already exists.");
             }
 
             if (!ModelState.IsValid)
@@ -55,7 +55,7 @@ namespace MiniELearning.Controllers
                 return View(category);
             }
 
-            TempData["SuccessMessage"] = $"Categoria „{category.Name}” a fost adăugată.";
+            TempData["SuccessMessage"] = $"Category \"{category.Name}\" was added successfully.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -85,7 +85,7 @@ namespace MiniELearning.Controllers
 
             if (ModelState.IsValid && await NameExistsAsync(category.Name, excludeId: id))
             {
-                ModelState.AddModelError(nameof(Category.Name), "Există deja o categorie cu acest nume.");
+                ModelState.AddModelError(nameof(Category.Name), "A category with this name already exists.");
             }
 
             if (!ModelState.IsValid)
@@ -106,7 +106,7 @@ namespace MiniELearning.Controllers
                 return View(category);
             }
 
-            TempData["SuccessMessage"] = $"Categoria „{existing.Name}” a fost actualizată.";
+            TempData["SuccessMessage"] = $"Category \"{existing.Name}\" was updated successfully.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -127,7 +127,7 @@ namespace MiniELearning.Controllers
             }
             catch (DbUpdateException)
             {
-                ModelState.AddModelError(nameof(Category.Name), "Există deja o categorie cu acest nume.");
+                ModelState.AddModelError(nameof(Category.Name), "A category with this name already exists.");
                 return false;
             }
         }

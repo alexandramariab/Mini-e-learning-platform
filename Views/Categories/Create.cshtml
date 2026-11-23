@@ -5,10 +5,10 @@
 }
 @model Category
 @{
-    ViewData["Title"] = "Adaugă categorie";
+    ViewData["Title"] = "Add category";
 }
 
-<h1 class="h3 mb-3">Adaugă categorie</h1>
+<h1 class="h3 mb-3">Add category</h1>
 
 <div class="row">
     <div class="col-md-6">
@@ -17,12 +17,12 @@
 
             <div class="mb-3">
                 <label asp-for="Name" class="form-label"></label>
-                <input asp-for="Name" class="form-control" placeholder="ex: Programare" autofocus />
+                <input asp-for="Name" class="form-control" placeholder="ex: Programming" autofocus />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
-            <button type="submit" class="btn btn-primary">Salvează</button>
-            <a asp-action="Index" class="btn btn-outline-secondary">Înapoi la listă</a>
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Index" class="btn btn-outline-secondary">Back to list</a>
         </form>
     </div>
 </div>
