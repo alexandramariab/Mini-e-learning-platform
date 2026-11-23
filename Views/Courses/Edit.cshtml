@@ -1,0 +1,53 @@
+﻿@model MiniELearning.Models.Course
+
+@{
+    ViewBag.Title = "";
+}
+
+<h2 class="text-center mt-5">Edit course settings</h2>
+
+<br />
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <form method="post" action="/Courses/Edit/@Model.Id">
+                @Html.Label("Title", "Course Title")
+                <br />
+                @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control" } })
+                <br /><br />
+
+                @Html.Label("Description", "Course description")
+                <br />
+                @Html.EditorFor(m =>m.Description, new { htmlAttributes = new { @class = "form-control" } })
+                <br /><br />
+
+                @Html.LabelFor(m => m.MaxEnrollments, "Maximum Enrollments")
+                <br />
+                @Html.EditorFor(m => m.MaxEnrollments, new { htmlAttributes = new { @class = "form-control" } })
+                <br /><br />
+
+                 <label>Select the level</label>
+                 <br />
+                 @Html.DropDownListFor(
+                    m => m.Level,                                    
+                    Html.GetEnumSelectList<MiniELearning.Models.Level>(), 
+                    "select",
+                    new { @class = "form-control" }               
+                 )
+                <br /><br />
+
+                <label>Select the category</label>
+                @Html.DropDownListFor(
+                        m => m.CategoryId,
+                        new SelectList(Model.CategoryList, "Value", "Text"),
+                        "select", new { @class = "form-select" })
+                <br /><br />
+
+                <button class="btn btn-sm btn-success" type="submit">Edit the course</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@model MiniELearning.Models.Course
+
+@{
+    ViewBag.Title = "";
+}
+
+<div class="d-flex justify-content-center gap-2">
+
+    <a class="btn btn-outline-success" asp-controller="Events" asp-action="Index">View Courses</a>
+
+    <a class="btn btn-outline-success" asp-controller="Events" asp-action="New">Add course</a>
+
+</div>
+
+<br />
+
+<div class="card">
+
+    <div class="card-body">
+
+        <h3 class="card-title alert-success py-3 px-3 rounded-2">@Model.Title</h3>
+
+        <div class="card-text">@Model.Description</div>
+
+        <div class="d-flex justify-content-between flex-row mt-5">
+
+            @* Model.Category este completată datorită Include(e => e.Category) din acțiunea Show *@
+            <div><i class="bi bi-globe"></i> @Model.Category.Name</div>
+
+            <div><i class="bi bi-geo-alt"></i> @Model.MaxEnrollments</div>
+
+            <span class="alert-success">@Model.Level</span>
+
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="d-flex flex-row justify-content-between">
+
+        <a asp-controller="Courses" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">Edit the course</a>
+
+        <form method="post" asp-controller="Courses" asp-action="Delete" asp-route-id="@Model.Id">
+
+            <button class="btn btn-danger" type="submit">Delete the course</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<br />
+<br />

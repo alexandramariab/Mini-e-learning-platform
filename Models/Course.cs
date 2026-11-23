@@ -1,4 +1,5 @@
 ﻿//using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -54,6 +55,11 @@ namespace MiniELearning.Models
 
         //prop de navigare
         public virtual Category Category { get; set; } = null!;
+
+        //pt dropdown din forms
+        [NotMapped]
+        public IEnumerable<SelectListItem> CategoryList { get; set; } = Enumerable.Empty<SelectListItem>();
+
 
     }
 }
