@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +16,7 @@
                 <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Mini e-Learning</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                        aria-controls="mainNavbar" aria-expanded="false" aria-label="Deschide meniul">
+                        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -26,13 +26,13 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Index">Catalog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Categorii</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Create">Adaugă curs</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Create">Add course</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Pending">Moderare cursuri</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="Pending">Course moderation</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -51,7 +51,7 @@
     <footer class="border-top bg-light py-3 mt-auto">
         <div class="container d-flex flex-wrap justify-content-between text-muted small">
             <span>&copy; @DateTime.Now.Year - Mini e-Learning</span>
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Confidențialitate</a>
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 
