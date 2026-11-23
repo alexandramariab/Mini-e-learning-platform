@@ -44,7 +44,7 @@ namespace MiniELearning.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> New()
+        public async Task<IActionResult> Create()
         {
             Course c = new Course();
 
@@ -55,7 +55,7 @@ namespace MiniELearning.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> New(Course c)
+        public async Task<IActionResult> Create(Course c)
         {
             try
             {
