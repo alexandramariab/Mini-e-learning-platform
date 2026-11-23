@@ -22,9 +22,9 @@ namespace MiniELearning.Controllers
             var courses = await query.ToListAsync();
 
             ViewBag.Courses = courses;
-            if (TempData.ContainsKey("message"))
+            if (TempData.ContainsKey("SuccessMessage"))
             {
-                ViewBag.Message = TempData["message"];
+                ViewBag.Message = TempData["SuccessMessage"];
             }
 
             return View();
@@ -61,7 +61,7 @@ namespace MiniELearning.Controllers
             {
                 db.Courses.Add(c);
                 await db.SaveChangesAsync();
-                TempData["message"] = "Course added succesfully.";
+                TempData["SuccessMessage"] = "Course added succesfully.";
                 return RedirectToAction("Index");
             }
             catch (Exception)
@@ -106,7 +106,7 @@ namespace MiniELearning.Controllers
                 c.CategoryId = requestCourse.CategoryId;
 
                 await db.SaveChangesAsync();
-                TempData["message"] = "The course was edited succesfully.";
+                TempData["SuccessMessage"] = "The course was edited succesfully.";
                 return RedirectToAction("Index");
             }
             catch (Exception)
@@ -127,7 +127,7 @@ namespace MiniELearning.Controllers
 
             db.Courses.Remove(c);
             await db.SaveChangesAsync();
-            TempData["message"] = "Course deleted succesfully.";
+            TempData["SuccessMessage"] = "Course deleted succesfully.";
             return RedirectToAction("Index");
         }
 
